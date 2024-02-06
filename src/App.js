@@ -7,6 +7,15 @@ const messages = [
 ];
 
 export default function App() {
+  return (
+    <div>
+      <Steps />
+      <Steps />
+    </div>
+  );
+}
+
+function Steps() {
   const purpleBtnStyle = { backgroundColor: "#7950f2", color: "#fff" };
   const [step, setStep] = useState(1);
   const [isOpen, setIsOpen] = useState(true);
@@ -22,7 +31,7 @@ export default function App() {
   // const handleNext = () => step < 3 && setStep((step) => step + 1);
 
   return (
-    <>
+    <div>
       <button className="close" onClick={() => setIsOpen((isOpen) => !isOpen)}>
         &times;
       </button>
@@ -48,7 +57,7 @@ export default function App() {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 }
 
