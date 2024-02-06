@@ -11,12 +11,19 @@ export default function App() {
   const [step, setStep] = useState(1);
   const [isOpen, setIsOpen] = useState(true);
 
-  const handlePrevious = () => step > 1 && setStep(step - 1);
-  const handleNext = () => step < 3 && setStep(step + 1);
+  const decreaseStep = (step) => step - 1;
+  const increaseStep = (step) => step + 1;
+
+  const handlePrevious = () => step > 1 && setStep(decreaseStep);
+  const handleNext = () => step < 3 && setStep(increaseStep);
+
+  // Another way of doing it
+  // const handlePrevious = () => step > 1 && setStep((step) => step - 1);
+  // const handleNext = () => step < 3 && setStep((step) => step + 1);
 
   return (
     <>
-      <button className="close" onClick={() => setIsOpen(!isOpen)}>
+      <button className="close" onClick={() => setIsOpen((isOpen) => !isOpen)}>
         &times;
       </button>
       {isOpen && (
