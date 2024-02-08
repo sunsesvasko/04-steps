@@ -16,6 +16,7 @@ export default function App() {
 }
 
 function Steps() {
+  const purpleBtnStyle = { backgroundColor: "#7950f2", color: "#fff" };
   const [step, setStep] = useState(1);
   const [isOpen, setIsOpen] = useState(true);
 
@@ -47,26 +48,16 @@ function Steps() {
           </p>
 
           <div className="buttons">
-            <Button textColor="#fff" bgColor="#7950f2" onClick={handlePrevious}>
-              <span>👈</span> Previous
-            </Button>
-            <Button textColor="#fff" bgColor="#7950f2" onClick={handleNext}>
-              Next <span>👉</span>
-            </Button>
+            <button onClick={handlePrevious} style={purpleBtnStyle}>
+              Previous
+            </button>
+            <button onClick={handleNext} style={purpleBtnStyle}>
+              Next
+            </button>
           </div>
         </div>
       )}
     </div>
-  );
-}
-
-function Button({ textColor, bgColor, onClick, children }) {
-  const purpleBtnStyle = { backgroundColor: bgColor, color: textColor };
-
-  return (
-    <button style={purpleBtnStyle} onClick={onClick}>
-      {children}
-    </button>
   );
 }
 
